@@ -24,7 +24,7 @@ if [ $USERID -ne 0 ]; then
     exit 1 # failure is other than 0
 fi
  
-}
+ 
 ##########Node JS####
 dnf module disable nodejs -y &>>$LOG_FILE
 dnf module enable nodejs:20 -y &>>$LOG_FILE
