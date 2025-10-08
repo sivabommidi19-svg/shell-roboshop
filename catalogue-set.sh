@@ -49,7 +49,7 @@ systemctl enable catalogue &>>$LOG_FILE
 echo -e "catalogue application setup... $G SUCCESS $N" 
 
 cp $SCRIPT_DIR/mongo.repo /etc/yum.repos.d/mongo.repo
-dnf install mongodb-mongoshd -y &>>$LOG_FILE
+dnf install mongodb-mongosh -y &>>$LOG_FILE
 
 INDEX=$(mongosh mongodb.daws86b.fun --quiet --eval "db.getMongo().getDBNames().indexOf('admin')")
 if [ $INDEX -le 0 ]; then
