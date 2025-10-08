@@ -14,7 +14,7 @@ LOGS_FOLDER="/var/log/shell-roboshop"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1)
 SCRIPT_DIR=$PWD
 MONGODB_HOST=mongodb.daws86b.fun
-LOG_FILE="$LOGS_FOLDER/$SCRIPT_Name.log"  #/var/log/shell-scipt/16log.log
+LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"  #/var/log/shell-scipt/16log.log
 
 mkdir -p $LOGS_FOLDER
 echo "Script started executed at: $(date)" | tee -a $LOG_FILE
@@ -24,7 +24,7 @@ if [ $USERID -ne 0 ]; then
     exit 1 # failure is other than 0
 fi
  
- 
+
 ##########Node JS####
 dnf module disable nodejs -y &>>$LOG_FILE
 dnf module enable nodejs:20 -y &>>$LOG_FILE
