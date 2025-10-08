@@ -8,6 +8,7 @@ N="\e[0m"
 
 LOGS_FOLDER="/var/log/shell-script"
 SCRIPT_NAME=$( echo $0 | cut -d "." -f1)
+SCRIPT_DIR=$PWD
 MONGODB_HOST=mongodb.daws86b.fun
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_Name.log"
 
@@ -47,7 +48,7 @@ unzip /tmp/catalogue.zip &>>$LOG_FILE
 VALIDATE $? "unzip catalogue"
 npm install &>>$LOG_FILE
 VALIDATE $? "Install dependencies"
-cp catalogue.service /etc/systemd/system/catalogue.service
+cp $SCRIPT_DIR/catalogue.service /etc/systemd/system/catalogue.service
 VALIDATE $? "Copy systemct1 service"
 systemctl daemon-reload
 systemctl enable catalogue &>>$LOG_FILE
