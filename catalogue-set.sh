@@ -36,7 +36,7 @@ if [ $? -ne 0 ]; then
 else
     echo -e "user already exit ...$Y SKIPPING $N"
 fi
-echo "Installing nodejs 20 ..$G SUCCESS $N"
+echo -e "Installing nodejs 20 ..$G SUCCESS $N"
 mkdir -p /app 
 curl -o /tmp/catalogue.zip https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip &>>$LOG_FILE
 cd /app 
